@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Skills Tracker</title>
+</head>
+<body>
+
+</body>
+    <main>
+        <ul id="list">
+        </ul>
+        <form id="myform" action="#" onsubmit="return populateFieldsOnSubmit(this)">
+            <input type="text" name="name">
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <script>
+        // this stops the form from refreshing the page after being submitted
+        document.getElementById('myform').addEventListener('submit', (e) => e.preventDefault());
+
+        // this function takes form inputs and manipulates the dom with them
+        const populateFieldsOnSubmit = (formElement) => {
+            const ul = document.getElementById('list');
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(formElement.name.value));
+            ul.appendChild(li);
+        }
+    </script>
+</html>
