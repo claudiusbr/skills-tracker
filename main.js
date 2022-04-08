@@ -11,7 +11,9 @@ document
 // this function takes form inputs and manipulates the dom with them
 const populateFieldsOnSubmit = (formElement) => {
   const skillName = formElement.name.value;
-  createListItem(skillName);
+  if (skillName) {
+    createListItem(skillName);
+  }
 };
 
 const deleteListItem = (formElement) => {
