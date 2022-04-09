@@ -9,15 +9,11 @@ document
 // TODO: little bit of css
 
 // this function takes form inputs and manipulates the dom with them
-const populateFieldsOnSubmit = (formElement) => {
+const addSkill = (formElement) => {
   const skillName = formElement.name.value;
   if (skillName) {
     createListItem(skillName);
   }
-};
-
-const deleteListItem = (formElement) => {
-  formElement.remove();
 };
 
 const getIdFromUserInput = (userInput) =>
@@ -31,9 +27,7 @@ const createListItem = (skillName) => {
   const removeSkillButton = document.createElement("button");
   const skillSpan = document.createElement("span");
 
-  removeSkillButton.addEventListener("click", (event) =>
-    document.getElementById(skillId).remove()
-  );
+  removeSkillButton.addEventListener("click", (event) => li.remove());
 
   removeSkillButton.appendChild(document.createTextNode("-"));
   skillSpan.appendChild(document.createTextNode(skillName));
