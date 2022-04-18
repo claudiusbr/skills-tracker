@@ -19,6 +19,8 @@ const addSkill = (formElement) => {
 const getIdFromUserInput = (userInput) =>
   userInput.toLowerCase().replaceAll(/\W/g, "");
 
+const clearInputField = () => document.getElementById("myform").reset();
+
 const createListItem = (skillName) => {
   const ul = document.getElementById("list");
   const li = document.createElement("li");
@@ -35,4 +37,5 @@ const createListItem = (skillName) => {
   li.appendChild(skillSpan);
   li.appendChild(removeSkillButton);
   ul.appendChild(li);
+  clearInputField();
 };
